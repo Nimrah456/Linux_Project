@@ -1,0 +1,9 @@
+# Cron schedule for the Linux lab server - Member 3
+# Format: minute hour day-of-month month day-of-week command
+
+# Daily backup at midnight (Member 2)
+0 0 * * * /home/nimrah/Linux_Project/member2-storage/lab_backup.sh >> /var/log/lab_backup.log 2>&1
+
+# Weekend cleanup, every Sunday at 01:00 (Member 3)
+0 1 * * 0 /home/nimrah/Linux_Project/member3-security/lab_cleanup.sh >> /var/log/lab_cleanup_cron.log 2>&1
+
