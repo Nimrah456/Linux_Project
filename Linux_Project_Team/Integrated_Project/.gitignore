@@ -1,0 +1,3 @@
+logs/*.log
+backups/*.tar.gz
+*.tmp
