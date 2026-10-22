@@ -38,3 +38,7 @@ To demonstrate practical Linux system administration, automation, security, and 
 [GitHub – Linux Project](https://github.com/Nimrah456/Linux_Project)
 
 *Developed as an academic Linux mini-project using Ubuntu and Bash Shell Scripting.*
+
+## Setup Guide
+
+For installation instructions, environment configuration, and instructions for running the dashboard, see the [Setup Guide](SETUP.md).
