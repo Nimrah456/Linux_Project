@@ -1,0 +1,29 @@
+initial_passwords.csv
+*.log
+
+# Python virtual environments
+.venv/
+venv/
+**/.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Private configuration
+.env
+.env.*
+
+# Temporary backups
+*.backup
+*.bak
+*.storage-backup
+*.audit-backup
+*.before-overview-fix
+*.before-duplicate-fix
+*.audit-ui-backup
+
+# Temporary application backups
+web_dashboard/app.py.backup*
+web_dashboard/app.py.before_*
+web_dashboard/static/app.js.before_*

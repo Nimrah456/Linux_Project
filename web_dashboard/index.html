@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Linux Infrastructure Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="logo">L</div>
+
+            <div>
+                <h2>LinuxOps</h2>
+                <p>Infrastructure Manager</p>
+            </div>
+        </div>
+
+        <p class="menu-label">MAIN MENU</p>
+
+        <nav>
+            <a class="active" href="#overview">Overview</a>
+            <a href="#users">User Management</a>
+            <a href="#permissions">Permissions</a>
+            <a href="#storage">Storage Management</a>
+            <a href="#backups">Backup & Recovery</a>
+            <a href="#security">Security</a>
+            <a href="#automation">Automation</a>
+            <a href="#audit">System Audit</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span class="status-dot"></span>
+            Web Interface Prototype
+        </div>
+
+    </aside>
+
+
+    <!-- Main dashboard -->
+    <main class="main-content">
+
+        <!-- Top Navigation -->
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">Home / Dashboard</p>
+
+                <h1>Linux Infrastructure Dashboard</h1>
+            </div>
+
+            <div class="admin">
+
+                <div class="avatar">A</div>
+
+                <div>
+                    <strong>Administrator</strong>
+                    <p>Linux Server Management</p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ========== OVERVIEW ========== -->
+
+        <section id="overview">
+
+            <div class="welcome">
+
+                <div>
+
+                    <p class="eyebrow">SERVER MANAGEMENT</p>
+
+                    <h2>Welcome to LinuxOps</h2>
+
+                    <p>
+                        Manage student accounts, storage, backups,
+                        security, and system auditing from one
+                        central dashboard.
+                    </p>
+
+                    <!-- Populated by JavaScript using Flask -->
+
+                    <p id="server-details">
+                        Connecting to Linux server...
+                    </p>
+
+                </div>
+
+                <div class="server-icon">⌘</div>
+
+            </div>
+
+
+            <!-- System Overview Cards -->
+
+            <h2 class="section-title">System Overview</h2>
+
+            <div class="stats-grid">
+
+                <!-- Student Accounts -->
+
+                <div class="stat-card">
+
+                    <span class="card-icon blue">U</span>
+
+                    <p>Student Accounts</p>
+
+                    <h3 id="student-count">Loading...</h3>
+
+                    <small id="student-detail">
+                        Retrieving account information
+                    </small>
+
+                </div>
+
+
+                <!-- Storage -->
+
+                <div class="stat-card">
+
+                    <span class="card-icon purple">S</span>
+
+                    <p>Root Disk Free</p>
+
+                    <h3 id="storage-free">Loading...</h3>
+
+                    <small id="storage-detail">
+                        Retrieving disk information
+                    </small>
+
+                </div>
+
+
+                <!-- Backup -->
+
+                <div class="stat-card">
+
+                    <span class="card-icon green">B</span>
+
+                    <p>Backup Status</p>
+
+                    <h3>12.85 GB free</h3>
+
+                    <small>
+                        Backup verification is not connected yet
+                    </small>
+
+                </div>
+
+
+                <!-- Firewall -->
+
+                <div class="stat-card">
+
+                    <span class="card-icon orange">F</span>
+
+                    <p>Firewall Status</p>
+
+                    <h3>12.85 GB free</h3>
+
+                    <small>
+                        Live security information is not connected yet
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- Project Modules -->
+
+            <h2 class="section-title">Project Modules</h2>
+
+            <div class="module-grid">
+
+                <a href="#users" class="module-card">
+
+                    <span class="module-icon blue">01</span>
+
+                    <h3>User Management</h3>
+
+                    <p>
+                        View student accounts and inspect their
+                        class group assignments.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+
+                <a href="#permissions" class="module-card">
+
+                    <span class="module-icon purple">02</span>
+
+                    <h3>File Permissions</h3>
+
+                    <p>
+                        Inspect directory ownership, permissions,
+                        and class-based access control.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+
+                <a href="#storage" class="module-card">
+
+                    <span class="module-icon purple">03</span>
+
+                    <h3>Storage Management</h3>
+
+                    <p>
+                        Inspect logical volumes, volume groups,
+                        and mounted filesystems.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+
+                <a href="#backups" class="module-card">
+
+                    <span class="module-icon green">04</span>
+
+                    <h3>Backup & Recovery</h3>
+
+                    <p>
+                        Inspect backup archives and verify
+                        available recovery files.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+
+                <a href="#security" class="module-card">
+
+                    <span class="module-icon orange">05</span>
+
+                    <h3>Firewall & Security</h3>
+
+                    <p>
+                        Check firewall status and inspect
+                        configured security rules.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+
+                <a href="#automation" class="module-card">
+
+                    <span class="module-icon blue">06</span>
+
+                    <h3>Cleanup & Automation</h3>
+
+                    <p>
+                        Review scheduled jobs, backups,
+                        and automated cleanup tasks.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+
+                <a href="#audit" class="module-card">
+
+                    <span class="module-icon green">07</span>
+
+                    <h3>System Audit</h3>
+
+                    <p>
+                        Review system checks and
+                        infrastructure validation results.
+                    </p>
+
+                    <span class="view-link">View module →</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== USER MANAGEMENT ========== -->
+
+        <section id="users" class="content-section">
+
+            <h2>User Management</h2>
+
+            <div class="panel">
+
+                <p>
+                    Manage and verify student accounts
+                    and class groups.
+                </p>
+
+                <p class="notice">
+                    The account overview is connected to the Linux
+                    backend. The complete user-management interface
+                    is not connected yet.
+                </p>
+
+                <button type="button" disabled>
+                    Refresh User List — Not Connected
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== PERMISSIONS ========== -->
+
+        <section id="permissions" class="content-section">
+
+            <h2>File Permissions & Access Control</h2>
+
+            <div class="panel">
+
+                <p>
+                    Inspect the ownership and permissions of
+                    class-specific shared directories.
+                </p>
+
+                <p class="notice">
+                    Live directory ownership and permission
+                    information is not connected yet.
+                </p>
+
+                <button type="button" disabled>
+                    Check Permissions — Not Connected
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== STORAGE ========== -->
+
+        <section id="storage" class="content-section">
+
+            <h2>Storage Management</h2>
+
+            <div class="panel">
+
+                <p>
+                    Monitor disk usage, physical volumes,
+                    volume groups, logical volumes,
+                    and mounted filesystems.
+                </p>
+
+                <p class="notice">
+                    The overview displays root filesystem space.
+                    Detailed LVM information has not been connected yet.
+                </p>
+
+                <button type="button" disabled>
+                    Refresh LVM Information — Not Connected
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== BACKUP AND RECOVERY ========== -->
+
+        <section id="backups" class="content-section">
+
+            <h2>Backup & Recovery</h2>
+
+            <div class="panel">
+
+                <p>
+                    Inspect backup archives, check archive contents,
+                    and manage backup operations.
+                </p>
+
+                <p class="notice">
+                    Backup status has not been retrieved from
+                    the Linux backend yet.
+                </p>
+
+                <button type="button" disabled>
+                    Run Backup — Not Connected
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== SECURITY ========== -->
+
+        <section id="security" class="content-section">
+
+            <h2>Firewall & Security</h2>
+
+            <div class="panel">
+
+                <p>
+                    Inspect UFW status, incoming firewall rules,
+                    and permitted network services.
+                </p>
+
+                <p class="notice">
+                    Actual firewall status and rules have not
+                    been retrieved from the backend yet.
+                </p>
+
+                <button type="button" disabled>
+                    Check Firewall — Not Connected
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== AUTOMATION ========== -->
+
+        <section id="automation" class="content-section">
+
+            <h2>Cleanup & Automation</h2>
+
+            <div class="panel">
+
+                <p>
+                    Inspect scheduled backups, cleanup jobs,
+                    and other configured cron tasks.
+                </p>
+
+                <p class="notice">
+                    Scheduled tasks have not been retrieved
+                    from the Linux backend yet.
+                </p>
+
+                <button type="button" disabled>
+                    View Scheduled Jobs — Not Connected
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== SYSTEM AUDIT ========== -->
+
+        <section id="audit" class="content-section">
+
+            <h2>System Audit & Validation</h2>
+
+            <div class="panel">
+
+                <p>
+                    Run the existing test script and review its output.
+                </p>
+
+                <p class="notice" id="audit-status">
+                    Audit has not been run yet.
+                </p>
+
+                <button type="button" id="run-audit-button">
+                    Run System Audit
+                </button>
+
+                <h3>Audit Output</h3>
+
+                <pre id="audit-output" style="white-space: pre-wrap; overflow-wrap: anywhere; padding: 12px; border-radius: 8px;">Click "Run System Audit" to view the results.</pre>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========== FOOTER ========== -->
+
+        <footer>
+            Linux Infrastructure Automation Project
+            <br>
+            Linux System Administration — E1ITA307
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript for live system information -->
+
+    <script src="/static/app.js?v=4"></script>
+
+</body>
+
+</html>

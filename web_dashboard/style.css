@@ -1,0 +1,777 @@
+/* =====================================
+   1. GLOBAL STYLES
+===================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* =====================================
+   2. SIDEBAR
+===================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    padding: 25px 18px;
+
+    background: #111827;
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 42px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+
+    display: grid;
+    place-items: center;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.brand h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.brand p {
+    color: #9ca3af;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.menu-label {
+    color: #9ca3af;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    margin: 0 0 14px 10px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar nav a {
+    display: block;
+
+    padding: 12px;
+
+    color: #cbd5e1;
+    background: transparent;
+
+    border-radius: 8px;
+    font-size: 14px;
+
+    transition: background 0.2s, color 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #263449;
+    color: #ffffff;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding-top: 25px;
+
+    color: #9ca3af;
+    font-size: 11px;
+}
+
+.status-dot {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    background: #f59e0b;
+    border-radius: 50%;
+
+    margin-right: 6px;
+}
+
+
+/* =====================================
+   3. MAIN CONTENT
+===================================== */
+
+.main-content {
+    margin-left: 250px;
+
+    width: calc(100% - 250px);
+    min-height: 100vh;
+
+    padding: 30px;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+    gap: 20px;
+
+    margin-bottom: 28px;
+}
+
+.breadcrumb {
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.topbar h1 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.admin {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.admin strong {
+    font-size: 13px;
+}
+
+.admin p {
+    color: #64748b;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+    color: #1d4ed8;
+
+    font-weight: bold;
+}
+
+
+/* =====================================
+   4. WELCOME SECTION
+===================================== */
+
+.welcome {
+    width: 100%;
+
+    background: linear-gradient(
+        120deg,
+        #1d4ed8,
+        #4338ca
+    );
+
+    color: #ffffff;
+
+    padding: 30px;
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+    margin-bottom: 32px;
+}
+
+.welcome > div:first-child {
+    min-width: 0;
+}
+
+.welcome .eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    opacity: 0.85;
+
+    margin-bottom: 12px;
+}
+
+.welcome h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.welcome p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+#server-details {
+    margin-top: 12px;
+    color: #dbeafe;
+    overflow-wrap: anywhere;
+}
+
+.server-icon {
+    font-size: 50px;
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+
+/* =====================================
+   5. SECTION HEADINGS
+===================================== */
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+
+/* =====================================
+   6. SYSTEM OVERVIEW CARDS
+===================================== */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        4,
+        minmax(0, 1fr)
+    );
+
+    gap: 18px;
+
+    width: 100%;
+    margin-bottom: 34px;
+}
+
+.stat-card {
+    min-width: 0;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    padding: 22px;
+
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.03);
+
+    overflow-wrap: anywhere;
+}
+
+.card-icon {
+    display: inline-grid;
+    place-items: center;
+
+    width: 36px;
+    height: 36px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.blue {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.purple {
+    background: #ede9fe;
+    color: #6d28d9;
+}
+
+.green {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.orange {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.stat-card > p {
+    font-size: 13px;
+    color: #64748b;
+
+    margin: 15px 0 8px;
+}
+
+.stat-card h3 {
+    font-size: 23px;
+    font-weight: 700;
+
+    line-height: 1.35;
+}
+
+.stat-card small {
+    display: block;
+
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.6;
+
+    margin-top: 9px;
+}
+
+
+/* =====================================
+   7. PROJECT MODULE CARDS
+===================================== */
+
+.module-grid {
+    display: grid;
+
+    grid-template-columns: repeat(
+        2,
+        minmax(0, 1fr)
+    );
+
+    gap: 18px;
+    width: 100%;
+}
+
+.module-card {
+    display: block;
+    min-width: 0;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+
+    color: #1e293b;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        border-color 0.2s;
+}
+
+.module-card:hover {
+    transform: translateY(-3px);
+
+    border-color: #93c5fd;
+
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+}
+
+.module-icon {
+    display: inline-block;
+
+    padding: 7px 9px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.module-card h3 {
+    font-size: 16px;
+    margin-bottom: 9px;
+}
+
+.module-card p {
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.7;
+
+    margin-bottom: 17px;
+}
+
+.view-link {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   8. MODULE DETAIL SECTIONS
+===================================== */
+
+.content-section {
+    width: 100%;
+
+    margin-top: 36px;
+    scroll-margin-top: 25px;
+}
+
+.content-section h2 {
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.panel {
+    width: 100%;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.panel p {
+    font-size: 14px;
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+.notice {
+    padding: 13px;
+
+    background: #eff6ff;
+    color: #1d4ed8;
+
+    border-radius: 8px;
+    border: 1px solid #dbeafe;
+}
+
+button {
+    border: none;
+    border-radius: 7px;
+
+    padding: 11px 16px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+button:disabled {
+    background: #e2e8f0;
+    color: #64748b;
+
+    cursor: not-allowed;
+}
+
+
+/* =====================================
+   9. FOOTER
+===================================== */
+
+footer {
+    text-align: center;
+
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.8;
+
+    margin-top: 42px;
+    padding: 22px 0;
+}
+
+
+/* =====================================
+   10. RESPONSIVE LAYOUT
+===================================== */
+
+@media (max-width: 1200px) {
+    .main-content {
+        padding: 24px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 850px) {
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        width: calc(100% - 210px);
+        padding: 20px;
+    }
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        overflow: visible;
+    }
+
+    .brand {
+        margin-bottom: 25px;
+    }
+
+    .sidebar-footer {
+        margin-top: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome {
+        padding: 22px;
+    }
+
+    .welcome h2 {
+        font-size: 22px;
+    }
+
+    .server-icon {
+        font-size: 32px;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+}
+/* User management table */
+
+.panel-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin: 15px 0;
+}
+
+.data-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 18px;
+}
+
+.data-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.data-table th,
+.data-table td {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table th {
+    background: #f8fafc;
+    color: #475569;
+    font-weight: 700;
+}
+
+.data-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.data-table td {
+    overflow-wrap: anywhere;
+}
+
+/* Storage management results */
+
+.storage-results {
+    margin-top: 22px;
+}
+
+.storage-result {
+    margin-bottom: 22px;
+    min-width: 0;
+}
+
+.storage-result h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.command-label {
+    font-family: monospace;
+    font-size: 12px;
+    color: #475569;
+    overflow-wrap: anywhere;
+    margin-bottom: 8px;
+}
+
+.command-output,
+.command-error {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+
+    padding: 16px;
+    border-radius: 8px;
+
+    font-family: monospace;
+    font-size: 12px;
+    line-height: 1.7;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+
+    overflow-x: auto;
+}
+
+.command-output {
+    background: #111827;
+    color: #d1fae5;
+}
+
+.command-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+/* Backup management */
+
+.panel-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.panel-toolbar button {
+    cursor: pointer;
+}
+
+.backup-inspection-heading {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.backup-inspection {
+    max-height: 450px;
+    overflow: auto;
+}
+
+@media (max-width: 600px) {
+    .panel-toolbar {
+        justify-content: flex-start;
+    }
+}
+/* Backup management */
+
+.panel-toolbar {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.panel-toolbar button {
+    cursor: pointer;
+}
+
+.panel-toolbar button:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.backup-inspection-heading {
+    margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.backup-inspection {
+    max-height: 450px;
+    overflow: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .panel-toolbar {
+        justify-content: flex-start;
+    }
+}
